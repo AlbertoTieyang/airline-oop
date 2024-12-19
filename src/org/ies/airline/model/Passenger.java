@@ -15,6 +15,10 @@ public class Passenger {
         this.seatNumber = seatNumber;
     }
 
+    public void showInfo(){
+        System.out.println("Nombre: " + name + " " + surname+ " ( "+nif+ " ) "+" Asiento: "+seatNumber);
+    }
+
     public String getNif() {
         return nif;
     }

@@ -12,6 +12,53 @@ public class Airline {
         this.flights = flights;
     }
 
+    public void showFlight(){
+        for(var flight : flights){
+            flight.showInfo();
+        }
+    }
+
+    public void showFlightFromOrigin(String origin){
+        for(var flight : flights){
+            if(flight.getOrigin().equals(origin)){
+                System.out.println(flight.getOrigin());
+            }
+        }
+    }
+
+    public void showPassengerFlights(String nif, int flightNumber){
+        var findFlight = findFlight(flightNumber);
+        if(findFlight != null){
+            for(var passenger: flights){
+                if(passenger.findPassenger(nif) != null){
+                    passenger.showInfo();
+                }
+            }
+        }
+    }
+
+    public Flight findFlight (int numberFlight){
+        for (var flight: flights){
+            if(flight.getFlightNumber() == numberFlight){
+                return flight;
+            }
+        }
+        return null;
+    }
+
+    public Passenger getPassengerSeat(int flightNumber, String nif){
+        var findFlight = findFlight(flightNumber);
+        for(var flight : flights){
+            if(findFlight != null){
+                for(var passenger: flights){
+                    if(flight.findPassenger(nif) != null){
+
+                    }
+                }
+            }
+        }
+    }
+
     public String getName() {
         return name;
     }
